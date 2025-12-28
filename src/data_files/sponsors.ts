@@ -27,7 +27,7 @@ export const goldSponsors: Sponsor[] = [
   {
     id: 'g1',
     name: 'Nepal College of Information Technology (NCIT)',
-    type: 'Gold Sponsor',
+    type: 'Title Sponsor',
     description: 'Empowering future engineers and innovators.',
     longDescription:
       'Nepal College of Information Technology (NCIT), located in Balkumari, is one of Nepal’s leading engineering institutions. NCIT supports this event by fostering innovation, technical excellence, and industry-ready education among students.',
