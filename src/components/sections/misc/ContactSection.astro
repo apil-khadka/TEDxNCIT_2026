@@ -41,37 +41,45 @@ const formSubTitle: string = "We'll get back to you as soon as possible."
         </h2>
         <!-- Form for user input with various input fields.-->
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form action="">
-          <!-- TODO: Add form submission logic here -->
+        <form action="https://formspree.io/f/meeqlqyk" method="POST">
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
                 label="First Name"
-                name="hs-firstname-contacts"
+                name="firstName"
+                required
               />
               <TextInput
                 id="hs-lastname-contacts"
                 label="Last Name"
-                name="hs-firstname-contacts"
+                name="lastName"
+                required
               />
             </div>
-            <EmailContactInput id="hs-email-contacts" />
-            <PhoneInput id="hs-phone-number" />
+
+            <EmailContactInput id="hs-email-contacts" name="email" required />
+            <PhoneInput id="hs-phone-number" name="phone" />
             <TextAreaInput
               id="hs-about-contacts"
               label="Details"
-              name="hs-about-contacts"
+              name="message"
+              required
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-indigo-700 hover:shadow-lg"
+            >
+              Send Message
+            </button>
           </div>
 
           <div class="mt-3 text-center">
             <p class="text-sm text-neutral-600 dark:text-neutral-400">
-              {formSubTitle}
+              We'll get back to you as soon as possible.
             </p>
           </div>
         </form>
