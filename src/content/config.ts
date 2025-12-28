@@ -49,18 +49,6 @@ const speakersCollection = defineCollection({
           }),
         )
         .optional(),
-      tableData: z
-        .array(
-          z.object({
-            feature: z.array(z.string()),
-            description: z.array(z.array(z.string())),
-          }),
-        )
-        .optional(),
-      publications: z.object({
-        first: image().optional(),
-        second: image().optional(),
-      }),
     }),
 })
 

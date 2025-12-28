@@ -2,6 +2,7 @@
 // Import section components
 import { SITE, OG } from '@data/constants'
 import MainLayout from '@/layouts/MainLayout.astro'
+import BackButton from '@/components/sections/misc/BackButton.astro'
 import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
 
@@ -45,6 +46,10 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`
     url: `${SITE.url}insights/${post.slug}`,
   }}
 >
+  <div class="mx-auto -ml-0.5 mt-12 max-w-[85rem] px-4 pt-4 sm:px-6 lg:px-8">
+    <BackButton label="Back to insights" />
+  </div>
+
   <section class="py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-3 lg:gap-12">
