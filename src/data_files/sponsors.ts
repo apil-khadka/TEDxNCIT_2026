@@ -8,6 +8,9 @@ import MandiraFoodsImg from '@images/sponsors/mandhira.png';
 import NextSkillsImg from '@images/sponsors/next_skills.png';
 import RadheyOrganicsImg from '@images/sponsors/radhey_organic.png';
 import SuiroTeasImg from '@images/sponsors/suiro-logo.png';
+import VertexSpecialTechImg from '@images/sponsors/vertex_special.png';
+import OopsNepalImg from '@images/sponsors/oops_nepal.png';
+import HimaAusImg from '@images/sponsors/hima_aus.png';
 
 // Define Types
 export interface Sponsor {
@@ -34,7 +37,19 @@ export const goldSponsors: Sponsor[] = [
     url: 'https://ncit.edu.np',
     img: NcitImg,
   },
+{
+  id: 'g2',
+  name: 'HIMAUS Consultancy',
+  type: 'Title Sponsor',
+  description: 'Leading international education and visa consultancy.',
+  longDescription:
+    'HIMAUS Consultancy (Hima Aus Education Australia Pty Ltd) is a licensed and internationally-operating education and visa consultancy founded in Sydney in 2008. The organization provides end-to-end support for students pursuing study abroad opportunities by offering personalized counseling, course and university selection, test preparation, admissions and documentation support, visa assistance, pre-departure briefings, and airport pickup services. With a presence in multiple countries including Nepal, Australia, India, Sri Lanka, and Thailand, HIMAUS is deeply committed to helping students achieve their global education goals and navigate the complexities of international admissions and immigration processes. As the Title Sponsor of TEDxNCIT, HIMAUS Consultancy champions global opportunities, student support, and future-focused journeys. ',
+  url: 'https://himaaus.com/',
+  img: HimaAusImg
+}
+
 ];
+
 
 /* =======================
    SILVER SPONSORS
@@ -66,6 +81,17 @@ export const bronzeSponsors: Sponsor[] = [
     url: 'https://www.instagram.com/donut_drool/?hl=en',
     img: DonutDroolsImg,
   },
+{
+  id: 'b2',
+  name: 'Vertex Special Technology',
+  type: 'Tech Partner',
+  description: 'Innovative tech solutions.',
+  longDescription: 
+    'Vertex Special Technology is a Nepal-based technology company that delivers modern digital and software solutions to businesses and organizations. They contribute to projects or events by providing technical support and innovative solutions that enhance the overall experience for attendees and organizers. The company specializes in custom software development, digital transformation, AI and web/mobile technologies, helping partners achieve operational efficiency and growth.',
+  url: 'https://vertexspecial.com/',
+  img: VertexSpecialTechImg
+}
+
 ];
 
 /* =======================
@@ -142,4 +168,16 @@ export const communitySponsors: Sponsor[] = [
     url: 'https://suiroteas.com',
     img: SuiroTeasImg,
   },
+{
+  id: 'b4',
+  name: 'OOPS Nepal',
+  type: 'Supporter',
+  description: 'Family entertainment and experience partner.',
+  longDescription:
+    'OOPS Nepal is a family entertainment centre and indoor fun park based in Kathmandu that offers a diverse range of activities for children, families and youth. The facility features interactive and skill-based attractions like arcade games, VR and simulation games, climbing walls, trampoline zones, bowling, bumper cars, and more — designed to provide all-weather fun and memorable experiences for visitors of all ages. As a supporter, OOPS Nepal contributes to the event through non-cash sponsorship including 250 redeemable vouchers, influencer cards valued at NPR 35,000, and gift vouchers for five speakers.',
+  url: 'https://www.instagram.com/oopsinnepal/?hl=en',
+  img: OopsNepalImg
+}
+
+
 ];
