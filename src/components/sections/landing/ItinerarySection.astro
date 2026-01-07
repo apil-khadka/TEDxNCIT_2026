@@ -1,0 +1,199 @@
+---
+const events = [
+  { time: "09:00 - 10:00 AM", label: "Registration", color: "#e3f2fd" },
+  { time: "10:00 - 10:15 AM", label: "Welcome", color: "#f3e5f5" },
+  { time: "10:15 - 10:20 AM", label: "Inauguration", color: "#fff3e0" },
+  { time: "10:20 - 10:30 AM", label: "Welcome Speech", color: "#e8f5e9" },
+  { time: "10:30 - 10:40 AM", label: "Cultural Dance", color: "#fce4ec" },
+  { time: "10:40 - 11:05 AM", label: "Luna Luitel", color: "#e0f2f1" },
+  { time: "11:05 - 11:30 AM", label: "Sojan Prajapati", color: "#f9fbe7" },
+  { time: "11:30 - 11:40 AM", label: "Game", color: "#e1f5fe" },
+  { time: "11:40 - 12:05 PM", label: "Sameer Mani Dixit", color: "#f3e5f5" },
+  { time: "12:05 - 12:30 PM", label: "Kumar Pudashine", color: "#fff3e0" },
+  { time: "12:30 - 12:55 PM", label: "Mona Nyachhyon", color: "#e8f5e9" },
+  { time: "12:55 - 01:55 PM", label: "Lunch Break", color: "#fff9c4", highlight: true },
+  { time: "01:55 - 02:10 PM", label: "Performance / Game", color: "#fce4ec" },
+  { time: "02:10 - 02:35 PM", label: "Bikas Gurung", color: "#e0f2f1" },
+  { time: "02:35 - 02:45 PM", label: "Performance", color: "#f9fbe7" },
+  { time: "02:45 - 03:10 PM", label: "Dorji Dhradhul", color: "#e1f5fe" },
+  { time: "03:10 - 03:35 PM", label: "Rabindra Puri", color: "#f3e5f5" },
+  { time: "03:35 - 04:00 PM", label: "Siddhartha Ghimire", color: "#fff3e0" },
+  { time: "04:00 - 04:10 PM", label: "Game", color: "#e8f5e9" },
+  { time: "04:10 - 04:25 PM", label: "Token of Love Distribution", color: "#fce4ec" },
+  { time: "04:25 - 04:35 PM", label: "Ending Speech", color: "#e0f2f1" },
+  { time: "04:35 - 04:45 PM", label: "Performance Bands", color: "#ffccbc" },
+  { time: "04:45 PM", label: "Event Ends", color: "#ffccbc", highlight: true },
+];
+---
+
+<section class="itinerary-wrapper">
+  <div class="header">
+    <h1>Event Itinerary</h1>
+    <a href="/Itenary_TEDXNCIT2026.pdf" download class="download-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      Download PDF
+    </a>
+  </div>
+
+  <div class="waterfall">
+    {events.map((event, i) => (
+      <div
+        class={`event-block ${event.highlight ? 'highlight' : ''}`}
+        style={`--bg-color: ${event.color}; --delay: ${i * 0.08}s`}
+      >
+        <div class="time-range">{event.time}</div>
+        <div class="event-label">{event.label}</div>
+        {i < events.length - 1 && <div class="connector"></div>}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+    .itinerary-wrapper {
+        max-width: 700px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: fadeIn 0.8s ease;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+    }
+
+    .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .waterfall {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .event-block {
+        position: relative;
+        background: var(--bg-color);
+        padding: 1.5rem;
+        border-radius: 12px;
+        opacity: 0;
+        animation: slideUp 0.6s ease forwards;
+        animation-delay: var(--delay);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-left: 4px solid rgba(102, 126, 234, 0.3);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .event-block:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-left-color: #667eea;
+    }
+
+    .event-block.highlight {
+        background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+        border-left-color: #e17055;
+        font-weight: 600;
+    }
+
+    .time-range {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    .event-label {
+        font-size: 1.15rem;
+        color: #4a5568;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    .highlight .event-label {
+        color: #2d3748;
+        font-weight: 600;
+    }
+
+    .connector {
+        position: absolute;
+        left: -2px;
+        bottom: -1.5rem;
+        width: 4px;
+        height: 1.5rem;
+        background: linear-gradient(to bottom, rgba(102, 126, 234, 0.4), rgba(102, 126, 234, 0.1));
+        z-index: -1;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .header h1 {
+            font-size: 1.8rem;
+        }
+
+        .event-block {
+            padding: 1.25rem;
+        }
+
+        .time-range {
+            font-size: 0.85rem;
+        }
+
+        .event-label {
+            font-size: 1rem;
+        }
+    }
+</style>

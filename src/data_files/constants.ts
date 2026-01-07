@@ -96,6 +96,18 @@ export const CONTACT_SEO = {
     url: `${SITE.url}contact`,
   },
 }
+export const EVENT_ITINERARY = {
+  title: 'EVENT_ITINERARY | TEDxNCIT',
+  description: 'Itinerary of TEDxNCIT 2026',
+  structuredData: {
+    '@context': 'https://schema.org',
+    '@type': 'EventItinerary',
+    name: 'EVENT_ITINERARY | TEDxNCIT',
+    description:
+      'Itinerary of TEDxNCIT 2026',
+    url: `${SITE.url}contact`,
+  },
+}
 
 export const REGISTER_SEO = {
   title: 'Register for TEDxNCIT',

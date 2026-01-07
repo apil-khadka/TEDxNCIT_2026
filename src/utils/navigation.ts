@@ -7,6 +7,7 @@ const navBarLinks = [
   { name: "FAQ's", url: "/contact#faq-section" },
   { name: "Contact", url: "/contact" },
   { name: "Insights", url: "/insights" },
+  { name: "Itinerary", url: "/EventItinerary" },
 ];
 // An array of links for footer
 const footerLinks = [

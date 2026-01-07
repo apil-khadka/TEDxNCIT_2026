@@ -1,0 +1,28 @@
+---
+// Import the necessary components
+import MainLayout from '@/layouts/MainLayout.astro'
+import { SITE } from '@data/constants'
+import { EVENT_ITINERARY, OG } from '@data/constants'
+import ItinerarySection from '@components/sections/landing/ItinerarySection.astro'
+
+const pageTitle: string = `Contact | ${SITE.title}`
+---
+
+<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+<MainLayout
+  title={EVENT_ITINERARY.title}
+  description={EVENT_ITINERARY.description}
+  structuredData={EVENT_ITINERARY.structuredData}
+  meta={[
+    // Adding Open Graph (OG) tags
+    { property: 'og:title', content: EVENT_ITINERARY.title },
+    { property: 'og:description', content: EVENT_ITINERARY.description },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: `${SITE.url}contact` },
+    { property: 'og:image', content: OG.image },
+  ]}
+>
+    <div class="flex items-center gap-8">
+      <ItinerarySection />
+    </div>
+</MainLayout>
