@@ -132,7 +132,7 @@ const s = sizes[size as keyof typeof sizes]
   <button
     onclick={`window.openSponsorModal('${sponsor.id}', '${tier}')`}
     class={`relative w-full rounded-2xl border-2 overflow-hidden cursor-pointer transition-all duration-500
-      ${t.border} ${t.shadow} bg-white dark:bg-neutral-900 ${s.container}`}
+      ${t.border} ${t.shadow} bg-white dark:bg-neutral-900 ${isGold ? 'min-h-[450px]' : s.container}`}
     aria-label={`Open details for ${sponsor.name}`}
   >
     <div
@@ -156,7 +156,7 @@ const s = sizes[size as keyof typeof sizes]
 
       <!-- TEXT AREA - takes remaining space -->
       <div
-        class={`relative flex flex-col justify-center flex-1 w-full ${s.textPadding}
+        class={`relative  flex flex-col justify-center flex-1 w-full ${s.textPadding}
           ${isCenteredTier ? 'items-center text-center' : 'items-start text-left'}
           overflow-hidden`}
       >
